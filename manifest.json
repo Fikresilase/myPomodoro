@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "name": "My  Pomodoro",
+    "version": "1.0",
+    "description": "A Pomodoro timer extension to help you focus.",
+    "action": {
+      "default_popup": "popup.html"
+      
+    },
+    "permissions": []
+  }
+  
