@@ -1,7 +1,9 @@
-var pomodoro = document.getElementById("start-button");
+var pomodoro = document.getElementById("pomodoro");
 
-const handleClick = (name) => {
-    alert(name + " clicked\nEnjoy your session!");
-};
+function pomodoroTimer() {
+    var clickTime = new Date(); // Get the current date and time
+    alert("Button clicked at: " + clickTime.toLocaleString());
+}
 
-pomodoro.onclick = () => handleClick("pomodoro");
+// Assign the function to the onclick event
+pomodoro.onclick = pomodoroTimer;

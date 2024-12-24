@@ -67,7 +67,7 @@ body {
     margin-bottom: 15px;
   }
   
-  #start-button {
+  #pomodoro {
     width: 60px;
     height: 60px;
     font-size: 24px;
@@ -80,7 +80,7 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
   }
   
-  #start-button:hover {
+  #pomodoro:hover {
     transform: scale(1.1);
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
   }
