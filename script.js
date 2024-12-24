@@ -1,8 +1,9 @@
 var pomodoro = document.getElementById("pomodoro");
 
 function pomodoroTimer() {
-    var clickTime = new Date(); // Get the current date and time
-    alert("Button clicked at: " + clickTime.toLocaleString());
+    // Get the current date and time inside the function
+    var pomodoroTime = new Date();
+    alert("Button clicked at: " + pomodoroTime.toLocaleString());
 }
 
 // Assign the function to the onclick event
