@@ -1,23 +1,11 @@
-const pomodoroButton = document.getElementById('pomodoro');
-pomodoroButton.addEventListener('click', function () {
-    // Get the current time
-    const pomodoroTime = new Date();
-
-    // Format the current time
-    const formattedTime = pomodoroTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-    // Confirm the start time
-    confirm(`Pomodoro starts at ${formattedTime}. Let's Goooo!`);
-
-    // Calculate the end time (5 seconds later)
-    const nexttime = pomodoroTime.getTime() + 5000; // Add 5000 milliseconds (5 seconds)
-
-    // Convert the timestamp back to a Date object
-    const nextTimeDate = new Date(nexttime);
-
-    // Format the end time
-    const formattedNextTime = nextTimeDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-    // Confirm the end time
-    confirm(`Pomodoro ends at ${formattedNextTime}. Time for a 5-minute break!`);
+let pomodoro = document.getElementById("pomodoro");
+pomodoro.addEventListener("click", function() {
+    alert("Pomodoro clicked"); // First alert (immediately)
+    
+    setTimeout(function() {
+        alert("Pomodoro started, time to take rest"); // After 10 seconds
+        setTimeout(function() {
+            alert("Up! Time to take your break"); // Another 10 seconds later (20s total)
+        }, 10 * 1000); // 10 seconds after the 2nd alert
+    }, 10 * 1000); // 10 seconds after the 1st alert
 });
