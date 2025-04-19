@@ -1,104 +1,117 @@
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 300px;
-    height: 200px;
-    display: flex;
-    background: linear-gradient(135deg, #f7fafc, #edf2f7); /* Light Chakra background */
-    color: #1a202c; /* Dark gray text color */
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  background-color: #ffffff;
+  color: #1f2937; /* Neutral dark text */
+}
+
+/* Container */
+#popup-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  background-color: #f9fafb;
+}
+
+/* Shared Section Styles */
+#left, #right {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Left Section */
+#left {
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+}
+
+#left h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+
+#left input {
+  width: 85%;
+  padding: 10px 14px;
+  margin: 5px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  background-color: #f9fafb;
+  color: #1f2937;
+  transition: all 0.2s ease-in-out;
+}
+
+#left input:focus {
+  border-color: #3b82f6;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  outline: none;
+}
+
+/* Right Section */
+#right {
+  background-color: #f3f4f6;
+}
+
+#right h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* Pomodoro Button */
+#pomodoro {
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  color: white;
+  background: linear-gradient(to bottom right, #3b82f6, #2563eb);
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#pomodoro:hover {
+  background: linear-gradient(to bottom right, #2563eb, #1d4ed8);
+  transform: scale(1.06);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+#pomodoro:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(59, 130, 246, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 320px) {
+  body {
+    width: 280px;
   }
-  
-  /* Container Layout */
-  #popup-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    border: 1px solid #e2e8f0; /* Light border */
-    border-radius: 12px; /* Consistent border radius */
-    overflow: hidden;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08); /* Soft shadow */
-  }
-  
-  /* Left Section */
-  #left, #right {
-    flex: 1;
-    padding: 16px; /* Reduced padding for consistency */
-    box-sizing: border-box;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  #left {
-    background: #f8f9fa; /* Slightly lighter background */
-    border-right: 1px solid #e2e8f0; /* Light border color */
-  }
-  
-  #left h3 {
-    font-size: 16px;
-    color: #4a5568; /* Mid-gray for headings */
-    margin-bottom: 8px; /* Reduced spacing for compact layout */
-  }
-  
+
   #left input {
-    width: 80%;
-    padding: 10px; /* Slightly larger for touch areas */
-    margin: 4px 0;
-    border: 1px solid #e2e8f0; /* Chakra's light border color */
-    border-radius: 8px; /* Consistent rounded corners */
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 75%;
   }
-  
-  #left input:focus {
-    border-color: #3182ce; /* Blue focus color */
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* Chakra's focus ring */
-  }
-  
-  /* Right Section */
-  #right h3 {
-    font-size: 16px;
-    color: #4a5568; /* Consistent heading color */
-    margin-bottom: 12px;
-  }
-  
-  #pomodoro {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-    color: white;
-    background: linear-gradient(135deg, #3182ce, #2b6cb0); /* Chakra blue gradient */
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  #pomodoro:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced hover effect */
-  }
-  
-  #start-button:active {
-    transform: scale(0.95);
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); /* Press effect */
-  }
-  
-  /* Responsive Styling */
-  @media (max-width: 320px) {
-    body {
-      width: 280px;
-    }
-  
-    #left input {
-      width: 70%;
-    }
-  }
-  
+}
