@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Pomodoro</title>
-  <link rel="stylesheet" href="popup.css" />
-</head>
-<body>
-  <div id="popup-container">
-    <div id="left">
-      <h3>Focus Time</h3>
-      <input type="number" id="hours" placeholder="Hours" min="0" />
-      <input type="number" id="minutes" placeholder="Minutes" min="0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pomodoro</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div id="popup-container">
+      <div id="left">
+        <h3>Focus Time</h3>
+        <input type="number" id="hours" placeholder="Hours" min="0" />
+        <input type="number" id="minutes" placeholder="Minutes" min="0" />
+      </div>
+      <div id="right">
+        <h3>Follow a Pomodoro</h3>
+        <button id="pomodoro">+</button>
+      </div>
     </div>
-    <div id="right">
-      <h3>Follow a Pomodoro</h3>
-      <button id="pomodoro">+</button>
-    </div>
-  </div>
-
-  <!-- <div id="countdown-wrapper">
-    <div class="timer-circle" id="timer">--:--</div>
-    <div class="phase-label" id="phase-label">Starting...</div>
-  </div> -->
-
-  <script src="pomodoro.js"></script>
-</body>
+    <script src="pomodoro.js"></script>
+  </body>
 </html>
