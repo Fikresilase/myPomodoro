@@ -1,9 +1,9 @@
 const pomodoro=document.getElementById("pomodoro");
 pomodoro.addEventListener("click",function(){
-  alert("Pomodoro timer started!");
+  notify("Pomodoro timer started!");
   const initialconfirm=confirm("Do you want to start the pomodoro timer?");
   if(initialconfirm==true){
-    alert("Pomodoro timer started!");
+  notify("Pomodoro timer started!");
     workingTime();
   }
   else{
@@ -35,3 +35,24 @@ function breakTime(){
     }
   }, 5000);
 }
+
+// custom select function to replace confirm
+function notify(message) {
+  const modal = document.createElement('div');
+  modal.innerHTML = `
+    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: rgba(0,0,0,0.5); display: flex; justify-content: center;
+                align-items: center; z-index: 9999;" id="notifyBox">
+      <div style="background: white; padding: 20px; border-radius: 8px;
+                  text-align: center; min-width: 250px;">
+        <p>${message}</p>
+        <button style="margin-top: 10px;">OK</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+  modal.querySelector("button").onclick = () => {
+    modal.remove();
+  };
+}
+

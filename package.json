@@ -1,0 +1,16 @@
+{
+  "name": "mypomodoro",
+  "version": "1.0.0",
+  "main": "pomodoro.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fikresilase",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "izitoast": "^1.4.0",
+    "notiflix": "^3.2.8",
+    "sweetalert2": "^11.19.1"
+  }
+}
