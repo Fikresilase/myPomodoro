@@ -1,42 +1,40 @@
-const pomodoro=document.getElementById("pomodoro");
-pomodoro.addEventListener("click",function(){
+const pomodoro = document.getElementById("pomodoro");
+pomodoro.addEventListener("click", async function () {
   notify("Pomodoro timer started!");
-  const initialconfirm=confirm("Do you want to start the pomodoro timer?");
-  if(initialconfirm==true){
-  notify("Pomodoro timer started!");
+  const initialconfirm = await select("Do you want to start the pomodoro timer?");
+  if (initialconfirm) {
+    notify("Pomodoro timer started!");
     workingTime();
+  } else {
+    notify("Pomodoro cancelled! Goodbye!");
   }
-  else{
-    alert("Pomodoro cancelled! Goodbye!");
-  }
-})
-function workingTime(){
-  setTimeout(() => {
-    const continueRest=confirm("pomodoro ended, Time to take a break!");
-    if(continueRest==true){
-      alert("Break time started!");
+});
+
+async function workingTime() {
+  setTimeout(async () => {
+    const continueRest = await select("Pomodoro ended, Time to take a break!");
+    if (continueRest) {
+      notify("Break time started!");
       breakTime();
-    }
-    else{
-      alert("Pomodoro cancelled! Goodbye!");
+    } else {
+      notify("Pomodoro cancelled! Goodbye!");
     }
   }, 5000);
 }
 
-function breakTime(){
-  setTimeout(() => {
-    const continueWorking=confirm("Break time ended, Time to get back to work!");
-    if(continueWorking==true){
-      alert("Back to work!");
+async function breakTime() {
+  setTimeout(async () => {
+    const continueWorking = await select("Break time ended, Time to get back to work!");
+    if (continueWorking) {
+      notify("Back to work!");
       workingTime();
-    }
-    else{
-      alert("Pomodoro cancelled! Goodbye!");
+    } else {
+      notify("Pomodoro cancelled! Goodbye!");
     }
   }, 5000);
 }
 
-// custom select function to replace confirm
+// ======= Custom Notification (alert) =======
 function notify(message) {
   const modal = document.createElement('div');
   modal.innerHTML = `
@@ -56,6 +54,7 @@ function notify(message) {
   };
 }
 
+// ======= Custom Confirm (select) =======
 function select(message) {
   return new Promise((resolve) => {
     const modal = document.createElement('div');
