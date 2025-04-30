@@ -56,3 +56,29 @@ function notify(message) {
   };
 }
 
+function select(message) {
+  return new Promise((resolve) => {
+    const modal = document.createElement('div');
+    modal.innerHTML = `
+      <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                  background: rgba(0,0,0,0.5); display: flex; justify-content: center;
+                  align-items: center; z-index: 9999;" id="selectBox">
+        <div style="background: white; padding: 20px; border-radius: 8px;
+                    text-align: center; min-width: 250px;">
+          <p>${message}</p>
+          <button id="yes" style="margin: 10px;">Yes</button>
+          <button id="no" style="margin: 10px;">No</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+    modal.querySelector("#yes").onclick = () => {
+      modal.remove();
+      resolve(true);
+    };
+    modal.querySelector("#no").onclick = () => {
+      modal.remove();
+      resolve(false);
+    };
+  });
+}
