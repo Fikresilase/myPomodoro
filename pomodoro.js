@@ -7,7 +7,7 @@ const pomodoroButton = document.getElementById("pomodoro");
 pomodoroButton.addEventListener("click", async function () {
   const confirmed = await askUser("Start the Pomodoro timer?");
   if (confirmed) {
-    notify("🎯 Pomodoro started!");
+    //notify("🎯 Pomodoro started!");
     startSession("work");
   } else {
     notify("⛔ Pomodoro cancelled!");
@@ -23,9 +23,9 @@ async function askUser(message) {
 function startSession(sessionType) {
   if (sessionType === "work") {
     setTimeout(async () => {
-      const confirmed = await askUser("✅ Work session done! Take a break?");
+      const confirmed = await askUser("🌴 Work session done! Take a break?");
       if (confirmed) {
-        notify("🌴 Break started!");
+        // notify("🌴 Break started!");
         startSession("break");
       } else {
         notify("🔕 Session ended.");
@@ -33,9 +33,9 @@ function startSession(sessionType) {
     }, workDuration);
   } else if (sessionType === "break") {
     setTimeout(async () => {
-      const confirmed = await askUser("☕ Break over! Back to work?");
+      const confirmed = await askUser("☕ Break over! 🚀 Back to work?");
       if (confirmed) {
-        notify("🚀 Back to work!");
+        //notify("🚀 Back to work!");
         startSession("work");
       } else {
         notify("🔕 Session ended.");
